@@ -99,9 +99,9 @@ def Changelog(screen, down):
 
 def Return(go):
     if go == "down-up" or go == "up-up" or go == "right-up" or go == "left-up":
-        go = "°"
+        go = "Â°"
     elif go == "n" or go == "y" or go == "esc" or go == "":
-        go = "°"
+        go = "Â°"
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             go = "n"
@@ -890,7 +890,7 @@ screen = pygame.display.set_mode([1280,786]) # half is 393
 hintergrund = pygame.Surface(screen.get_size())
 
 screen.fill([0, 0, 0])
-go, shad, uds, menu, A = "°", 127, 8, False, []
+go, shad, uds, menu, A = "Â°", 127, 8, False, []
 while go != "y" and go != "n" or menu == True:
     time.sleep(0.04)
     if menu == False and go != "y" and go != "n":
@@ -918,7 +918,7 @@ while go != "y" and go != "n" or menu == True:
         if go == "y":
             menu = True
             screen.fill([0, 0, 0])
-            go = "°"
+            go = "Â°"
             Choice = [255,127,127,127]
             change = False
             down = 0
