@@ -111,9 +111,9 @@ def Changelog(screen, down):
 
 def Return(go):
     if go == "down-up" or go == "up-up" or go == "right-up" or go == "left-up":
-        go = "°"
+        go = "Â°"
     elif go == "n" or go == "y" or go == "esc" or go == "":
-        go = "°"
+        go = "Â°"
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             go = "n"
@@ -1082,7 +1082,7 @@ pygame.init()
 screen = pygame.display.set_mode([1280,786]) # half is 393
 hintergrund = pygame.Surface(screen.get_size())
 screen.fill([0, 0, 0])
-go, shad, uds, menu, game, A, save = "°", 127, 8, False, False, [], False
+go, shad, uds, menu, game, A, save = "Â°", 127, 8, False, False, [], False
 q, b, notthird, goal, x, zu = 0, 0, True, 10, 0, 0
 stoppy, ten = False, -1
 total, extra = 0, ""
@@ -1116,7 +1116,7 @@ while go != "n":
             if go == "y":
                 menu = True
                 screen.fill([0, 0, 0])
-                go = "°"
+                go = "Â°"
                 Choice = [255,127,127,127,127]
                 change = False
                 down = 0
@@ -1209,7 +1209,7 @@ while go != "n":
             go1 = True
         if total >= 1000000 and go == "y":
             game = False
-            go == "°"
+            go == "Â°"
             menu = True
             total = 0
             screen.fill([0, 0, 0])
