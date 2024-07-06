@@ -34,10 +34,10 @@ def Savestates(screen, go, tog, games, save, qhs, bhs, hs, Ach):
         except FileNotFoundError as e:
             base = 8  # Amount of parameters in Save prompt
             screen.fill([0, 0, 0])
-            T = [None, 75, "Paste your save in the Python Shell", True, 255, 255, 255, screen.get_width() / 2,
+            T = [None, 75*x2, "Paste your save in the Python Shell", True, 255, 255, 255, screen.get_width() / 2,
                  screen.get_height() / 4]
             screen = Texts(T,screen,x2)
-            T = [None, 50, "If you don't have one, just press Enter in the Python Shell", True, 255, 255, 255,
+            T = [None, 50*x2, "If you don't have one, just press Enter in the Python Shell", True, 255, 255, 255,
                  screen.get_width() / 2, screen.get_height() / 2]
             screen = Texts(T,screen,x2)
             pygame.display.flip()
@@ -65,7 +65,7 @@ def Savestates(screen, go, tog, games, save, qhs, bhs, hs, Ach):
     current_time = datetime.datetime.now()
     screen.fill([0, 0, 0])
     if go == "right" or select == 1:
-        pygame.draw.rect(screen, (0, 0, 255), (screen.get_width() / 2 + 20, 250, 480, 550))
+        pygame.draw.rect(screen, (0, 0, 255), (screen.get_width() / 2 + 20*x2, 250*x2, 480*x2, 550*x2))
         select = 1
         achiev = 0
         for p in range(0, len(Ach)):
@@ -79,7 +79,7 @@ def Savestates(screen, go, tog, games, save, qhs, bhs, hs, Ach):
             __file__.index("alpha_") + 6] + version[__file__.index("alpha_") + 8] + "/" + str(games) + "/" + str(
             int(hs)) + "/" + str(achiev) + "/" + "0"
     if go == "left" or select == 2:
-        pygame.draw.rect(screen, (0, 0, 255), (140, 250, 480, 550))
+        pygame.draw.rect(screen, (0, 0, 255), (140*x2, 250*x2, 480*x2, 550*x2))
         select = 2
     hour = int(Save[1]) / 3600
     rhour = hour - int(hour)
@@ -100,55 +100,55 @@ def Savestates(screen, go, tog, games, save, qhs, bhs, hs, Ach):
     for k in range(0, len(Ach2)+1):
         if Ach2[(len(Ach2)-k):(len(Ach2)-k+1)] == "1":
             Ach3.append(k-1)
-    T = [None, 150, "Savestates", True, 255, 255, 255, screen.get_width() / 2, screen.get_height() / 8]
+    T = [None, 150*x2, "Savestates", True, 255, 255, 255, screen.get_width() / 2, screen.get_height() / 8]
     screen = Texts(T,screen,x2)
-    T = [None, 75, "<- Load    or    Save ->", True, 255, 255, 255, screen.get_width() / 2, screen.get_height() / 4]
+    T = [None, 75*x2, "<- Load    or    Save ->", True, 255, 255, 255, screen.get_width() / 2, screen.get_height() / 4]
     screen = Texts(T,screen,x2)
     varl = str(Save[4])
     if varl == "Alpha 5.8":
         varl = "58"
-    pygame.draw.rect(screen, (255, 255, 255), (screen.get_width() / 2 - 20, 250, 40, 550))
-    pygame.draw.rect(screen, (255, 255, 255), (screen.get_width() / 2 - 500, 250, 1000, 10))
-    T = [None, 25, "Record lv.3: " + str(hs), True, 255, 255, 255, screen.get_width() / 4 * 3 - 50,
+    pygame.draw.rect(screen, (255, 255, 255), (screen.get_width() / 2 - 20*x2, 250*x2, 40*x2, 550*x2))
+    pygame.draw.rect(screen, (255, 255, 255), (screen.get_width() / 2 - 500*x2, 250*x2, 1000*x2, 10*x2))
+    T = [None, 25*x2, "Record lv.3: " + str(hs), True, 255, 255, 255, screen.get_width() / 4 * 3 - 50*x2,
          screen.get_height() / 32 * 17]
     screen = Texts(T,screen,x2)
-    T = [None, 25, "Record lv.2: " + str(qhs), True, 255, 255, 255, screen.get_width() / 4 * 3 - 50,
+    T = [None, 25*x2, "Record lv.2: " + str(qhs), True, 255, 255, 255, screen.get_width() / 4 * 3 - 50*x2,
          screen.get_height() / 2]
     screen = Texts(T,screen,x2)
-    T = [None, 25, "Record lv.1: " + str(bhs), True, 255, 255, 255, screen.get_width() / 4 * 3 - 50,
+    T = [None, 25*x2, "Record lv.1: " + str(bhs), True, 255, 255, 255, screen.get_width() / 4 * 3 - 50*x2,
          screen.get_height() / 32 * 15]
     screen = Texts(T,screen,x2)
-    T = [None, 25, "Version: " + tog, True, 255, 255, 255, screen.get_width() / 4 * 3 - 50,
+    T = [None, 25*x2, "Version: " + tog, True, 255, 255, 255, screen.get_width() / 4 * 3 - 50*x2,
          screen.get_height() / 32 * 14]
     screen = Texts(T,screen,x2)
-    T = [None, 25, "Date: " + str(current_time)[0:19], True, 255, 255, 255, screen.get_width() / 4 * 3 - 50,
+    T = [None, 25*x2, "Date: " + str(current_time)[0:19], True, 255, 255, 255, screen.get_width() / 4 * 3 - 50*x2,
          screen.get_height() / 32 * 13]
     screen = Texts(T,screen,x2)
-    T = [None, 25, "Games won: " + str(games), True, 255, 255, 255, screen.get_width() / 4 * 3 - 50,
+    T = [None, 25*x2, "Games won: " + str(games), True, 255, 255, 255, screen.get_width() / 4 * 3 - 50*x2,
          screen.get_height() / 32 * 18]
     screen = Texts(T,screen,x2)
-    T = [None, 25, "Achievements: " + str(len(Ach)), True, 255, 255, 255, screen.get_width() / 4 * 3 - 50,
+    T = [None, 25*x2, "Achievements: " + str(len(Ach)), True, 255, 255, 255, screen.get_width() / 4 * 3 - 50*x2,
          screen.get_height() / 32 * 19]
     screen = Texts(T,screen,x2)
-    T = [None, 25, "Version: " + "Alpha " + varl[:1] + "." + varl[1:], True, 255, 255, 255, screen.get_width() / 4 + 50,
+    T = [None, 25*x2, "Version: " + "Alpha " + varl[:1] + "." + varl[1:], True, 255, 255, 255, screen.get_width() / 4 + 50*x2,
          screen.get_height() / 32 * 14]
     screen = Texts(T,screen,x2)
-    T = [None, 25, "Record lv.3: " + str(Save[6]), True, 255, 255, 255, screen.get_width() / 4 + 50,
+    T = [None, 25*x2, "Record lv.3: " + str(Save[6]), True, 255, 255, 255, screen.get_width() / 4 + 50*x2,
          screen.get_height() / 32 * 17]
     screen = Texts(T,screen,x2)
-    T = [None, 25, "Record lv.2: " + str(Save[3]), True, 255, 255, 255, screen.get_width() / 4 + 50,
+    T = [None, 25*x2, "Record lv.2: " + str(Save[3]), True, 255, 255, 255, screen.get_width() / 4 + 50*x2,
          screen.get_height() / 2]
     screen = Texts(T,screen,x2)
-    T = [None, 25, "Record lv.1: " + str(Save[2]), True, 255, 255, 255, screen.get_width() / 4 + 50,
+    T = [None, 25*x2, "Record lv.1: " + str(Save[2]), True, 255, 255, 255, screen.get_width() / 4 + 50*x2,
          screen.get_height() / 32 * 15]
     screen = Texts(T,screen,x2)
-    T = [None, 25, "Date: " + str(Save[0])[0:4] + "-" + str(Save[0])[4:6] + "-" + str(Save[0])[6:] + " " + str(hour) + ":" + str(rminu) + ":" + str(rsec), True, 255, 255, 255, screen.get_width() / 4 + 50,
+    T = [None, 25*x2, "Date: " + str(Save[0])[0:4] + "-" + str(Save[0])[4:6] + "-" + str(Save[0])[6:] + " " + str(hour) + ":" + str(rminu) + ":" + str(rsec), True, 255, 255, 255, screen.get_width() / 4 + 50*x2,
          screen.get_height() / 32 * 13]
     screen = Texts(T,screen,x2)
-    T = [None, 25, "Games won: " + str(Save[5]), True, 255, 255, 255, screen.get_width() / 4 + 50,
+    T = [None, 25*x2, "Games won: " + str(Save[5]), True, 255, 255, 255, screen.get_width() / 4 + 50*x2,
          screen.get_height() / 32 * 18]
     screen = Texts(T,screen,x2)
-    T = [None, 25, "Achievements: " + str(Ach1), True, 255, 255, 255, screen.get_width() / 4 + 50,
+    T = [None, 25*x2, "Achievements: " + str(Ach1), True, 255, 255, 255, screen.get_width() / 4 + 50*x2,
          screen.get_height() / 32 * 19]
     screen = Texts(T,screen,x2)
     if go == "left":
@@ -172,11 +172,11 @@ pygame.init()
 try:
     x1 = int(input("Recommended Screenlength: 1280 | Screenhight: 786\nScreenlengh:"))
 except ValueError:
-    x1 = 1280
+    x1 = 1920
 try:
     y1 = int(input("Screenhight:"))
 except ValueError:
-    y1 = 786
+    y1 = 1208
 x2 = x1/1280
 y2 = y1/786
 if x2 > y2:
@@ -200,22 +200,22 @@ while go != "n":
                 semi = version[__file__.index("alpha_") + 7: len(version)]
                 tog = totalvs + semi
             for sha in range(0, 9):
-                T = [None, int(200), "NUMERS", True, 127 + sha * 16, 127 + sha * 16, 127 + sha * 16,
+                T = [None, int(200*x2), "NUMERS", True, 127 + sha * 16, 127 + sha * 16, 127 + sha * 16,
                      screen.get_width() / 2 + sha, 100 + sha,screen,x2]
                 screen = Texts(T,screen,x2)
             pygame.display.set_caption("NUMERS " + totalvs + semi)
             for sha in range(0, 5):
-                font = pygame.font.Font(None, 100)
+                font = pygame.font.Font(None, int(100*x2))
                 text = font.render(totalvs, True, (127 + sha * 32, 127 + sha * 32, 0))
-                font2 = pygame.font.Font(None, 75)
+                font2 = pygame.font.Font(None, int(75*x2))
                 text2 = font2.render(semi, True, (127 + sha * 32, 127 + sha * 32, 0))
-                textpos = text.get_rect(centerx=screen.get_width() / 2 + sha - text2.get_width() / 2, y=256 + sha)
+                textpos = text.get_rect(centerx=screen.get_width() / 2 + int(sha*x2) - text2.get_width() / 2, y=int(256*x2) + int(sha*x2))
                 textpos2 = text2.get_rect(
                     x=text.get_width() / 2 + screen.get_width() / 2 + sha / 2 - text2.get_width() / 2,
-                    bottom=323 + sha / 2)  # shall work for .x.y too
+                    bottom=int(323*x2) + sha / 2)  # shall work for .x.y too
                 screen.blit(text, textpos)
                 screen.blit(text2, textpos2)
-            T = [None, 50, "Press Return to Start!", True, shad, shad, shad, screen.get_width() / 2,
+            T = [None, 50*x2, "Press Return to Start!", True, shad, shad, shad, screen.get_width() / 2,
                  screen.get_height() / 2]
             screen = Texts(T,screen,x2)
             go = Return(go)
@@ -229,27 +229,28 @@ while go != "n":
             shad = shad - uds
             if shad == 7 or shad == 127:
                 uds = -uds
+            time.sleep(0.04)
         if menu == True:
             screen.fill([0, 0, 0])
             if change != True and achi != True and save != True:
-                T = [None, 200, "MENU", True, 255, 255, 255, screen.get_width() / 2, screen.get_height() / 8]
+                T = [None, 200*x2, "MENU", True, 255, 255, 255, screen.get_width() / 2, screen.get_height() / 8]
                 screen = Texts(T,screen,x2)
-                T = [None, 100, "Play", True, Choice[0], Choice[0], Choice[0], screen.get_width() / 2,
+                T = [None, 100*x2, "Play", True, Choice[0], Choice[0], Choice[0], screen.get_width() / 2,
                      screen.get_height() / 8 * 3]
                 screen = Texts(T,screen,x2)
-                T = [None, 75, "Statistics*", True, Choice[1], Choice[1], Choice[1], screen.get_width() / 4,
+                T = [None, 75*x2, "Statistics*", True, Choice[1], Choice[1], Choice[1], screen.get_width() / 4,
                      screen.get_height() / 8 * 4]
                 screen = Texts(T,screen,x2)
-                T = [None, 75, "Changelog", True, Choice[3], Choice[3], Choice[3], screen.get_width() / 4 * 3,
+                T = [None, 75*x2, "Changelog", True, Choice[3], Choice[3], Choice[3], screen.get_width() / 4 * 3,
                      screen.get_height() / 8 * 4]
                 screen = Texts(T,screen,x2)
-                T = [None, 75, "Savestates", True, Choice[2], Choice[2], Choice[2], screen.get_width() / 2,
+                T = [None, 75*x2, "Savestates", True, Choice[2], Choice[2], Choice[2], screen.get_width() / 2,
                      screen.get_height() / 8 * 4]
                 screen = Texts(T,screen,x2)
-                T = [None, 50, "*Not available right now", True, 127, 127, 127, screen.get_width() / 2,
+                T = [None, 50*x2, "*Not available right now", True, 127, 127, 127, screen.get_width() / 2,
                      screen.get_height() / 4 * 3.5]
                 screen = Texts(T,screen,x2)
-                T = [None, 75, "Achievements", True, Choice[4], Choice[4], Choice[4], screen.get_width() / 2,
+                T = [None, 75*x2, "Achievements", True, Choice[4], Choice[4], Choice[4], screen.get_width() / 2,
                      screen.get_height() / 8 * 5]
                 screen = Texts(T,screen,x2)
             go = Return(go)
