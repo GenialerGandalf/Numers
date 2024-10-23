@@ -89,7 +89,7 @@ def Changelog(screen, down, x2):
                ["alpha-7.8", "---{2024-07-06}---", "fix: Different display Sizes not displaying Numers 1, 2 and 3 correctly", "add: automatic Window size"],
                ["alpha-7.9", "---{2024-07-06}---", "fix: achievements visible in Achievements screen"],
                ["alpha-8.0", "---{2024-07-08}---", "add: save now oop", "add: new menu for start selection", "change: main file down to 321 Lines: Better then Alpha-2.5 (333 Lines)"],
-               ["alpha-8.1", "---{2024-07-09}---", "add: scrolling menu", "change: colored selection", "fix: only the Forward one is available before 1M score"].
+               ["alpha-8.1", "---{2024-07-09}---", "add: scrolling menu", "change: colored selection", "fix: only the Forward one is available before 1M score"],
                ["alpha-8.2", "---{2024-23-10}---", "add: Numers Enemy", "add: 1-Turn value comparisons"]
                ]
     screen.fill([0, 0, 0])
